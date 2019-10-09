@@ -24,6 +24,7 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 syntax on
 
+set background=dark
 colorscheme gruvbox
 
 let g:airline#extensions#tabline#enabled = 1
