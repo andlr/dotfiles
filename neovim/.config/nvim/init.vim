@@ -15,6 +15,7 @@ Plug 'bling/vim-bufferline'
 Plug 'vim-scripts/gtags.vim'
 Plug 'majutsushi/tagbar'
 Plug 'ap/vim-css-color'
+Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
@@ -24,8 +25,9 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 syntax on
 
-set background=dark
-colorscheme gruvbox
+set termguicolors
+let ayucolor="light"
+colorscheme ayu
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1

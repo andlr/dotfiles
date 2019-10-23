@@ -97,3 +97,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$DOTNET_ROOT
