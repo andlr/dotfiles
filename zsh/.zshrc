@@ -10,6 +10,11 @@ export ZSH="${HOME}/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator ip ram time)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -99,3 +104,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$DOTNET_ROOT
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/vault vault
