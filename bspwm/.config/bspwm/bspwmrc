@@ -35,3 +35,6 @@ fi
 
 # keyboard config
 setxkbmap -layout us,ru,ua -option grp:shift_caps_toggle
+
+# wallpaper
+feh --bg-center ~/.config/bspwm/wallpaper.jpg
