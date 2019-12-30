@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+sxhkd &
+
+if [[ $(hostname) == 'al-ubuntu1910' ]]; then
+    bspc monitor HDMI-1 -d 1 2 3 4 5
+    bspc monitor HDMI-2 -d 6 7 8 9 10
+fi
+
+bspc config border_width         2
+bspc config window_gap          12
+bspc config top_padding 5
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# compositor
+if [ -x "$(command -v picom)" ]; then
+    picom &
+elif [ -x "$(command -v compton)" ]; then
+    compton &
+fi
+
+# polybar
+polybar_launch_script=~/.config/polybar/launch.sh
+if [ -x "$(command -v ${polybar_launch_script})" ]; then
+    ${polybar_launch_script}
+fi
+
+# dunst
+if [ -x "$(command -v dunst)" ]; then
+    dunst &
+fi
+
+# keyboard config
+setxkbmap -layout us,ru,ua -option grp:shift_caps_toggle
