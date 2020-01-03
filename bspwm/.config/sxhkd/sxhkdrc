@@ -11,8 +11,11 @@ super + @space
 	dmenu_run
 
 # make sxhkd reload its configuration files:
-super + Escape
+super + r
 	pkill -USR1 -x sxhkd
+
+super + Escape
+	slock
 
 #
 # bspwm hotkeys

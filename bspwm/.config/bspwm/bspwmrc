@@ -36,7 +36,11 @@ if [ -x "$(command -v dunst)" ]; then
 fi
 
 # keyboard config
-setxkbmap -layout us,ru,ua -option grp:shift_caps_toggle
+if [ -x "$(command -v setxkbmap)" ]; then
+    setxkbmap -layout us,ru,ua -option grp:shift_caps_toggle
+fi
 
 # wallpaper
-feh --bg-center ~/.config/bspwm/wallpaper.jpg
+if [ -x "$(command -v feh)" ]; then
+    feh --bg-center ~/.config/bspwm/wallpaper.jpg
+fi
