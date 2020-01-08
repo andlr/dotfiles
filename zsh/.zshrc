@@ -104,5 +104,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$DOTNET_ROOT
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/vault vault
+
+eval $(thefuck --alias)
+
