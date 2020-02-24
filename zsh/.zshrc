@@ -105,5 +105,3 @@ source $ZSH/oh-my-zsh.sh
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$DOTNET_ROOT
 
-eval $(thefuck --alias)
-
