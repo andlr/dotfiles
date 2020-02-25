@@ -2,7 +2,7 @@
 
 sxhkd &
 
-if [[ $(hostname) == 'al-ubuntu1910' ]]; then
+if [[ $(hostname) == 'arctic' ]]; then
     bspc monitor HDMI-1 -d 1 2 3 4 5
     bspc monitor HDMI-2 -d 6 7 8 9 10
 elif [[ $(hostname) == 'zenarch' ]] && xrandr | grep " connected " | grep -q HDMI2; then
