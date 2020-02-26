@@ -20,6 +20,9 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+bspc config focused_border_color "#e60053"
+bspc config normal_border_color "#0a6cf5"
+
 # compositor
 if [ -x "$(command -v picom)" ]; then
     picom &
