@@ -1,4 +1,4 @@
-#
+
 # wm independent hotkeys
 #
 
@@ -6,11 +6,11 @@
 super + Return
 	kitty
 
-# program launcher
-super + @space
-	dmenu_run
+# program launcher / window switcher
+super + {x,z}
+	rofi -show {drun,window} -theme ~/.config/rofi/theme.rasi
 
-# make sxhkd reload its configuration files:
+# -lah make sxhkd reload its configuration files:
 super + r
 	pkill -USR1 -x sxhkd
 

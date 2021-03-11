@@ -1,0 +1,58 @@
+configuration {
+  drun-display-format: "{icon} {name}";
+  modi: "window,run,drun";
+  show-icons: true;
+}
+
+* {
+  bg: #282828;
+  bg-alt: #3c3836;
+
+  fg: #fbf1c7;
+
+  blue: #83a598;
+
+  background-color: @bg;
+  
+  border: 1;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+element {
+  padding: 12;
+  orientation: vertical;
+  text-color: @fg;
+}
+
+element selected {
+  text-color: @blue;
+}
+
+entry {
+  background-color: @bg-alt;
+  padding: 12 0 12 3;
+  text-color: @fg;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+listview {
+  columns: 1;
+  lines: 8;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+prompt {
+  enabled: false;
+}
+
+window {
+  transparency: "real";
+}
