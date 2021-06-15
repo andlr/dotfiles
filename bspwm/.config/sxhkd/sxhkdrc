@@ -7,8 +7,8 @@ super + Return
 	kitty
 
 # program launcher / window switcher
-super + {x,z}
-	rofi -show {drun,window} -theme ~/.config/rofi/theme.rasi
+super + {c,x,z}
+	rofi -show {run,drun,window} -theme ~/.config/rofi/theme.rasi
 
 # -lah make sxhkd reload its configuration files:
 super + r

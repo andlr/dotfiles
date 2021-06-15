@@ -17,6 +17,8 @@ Plug 'majutsushi/tagbar'
 Plug 'ap/vim-css-color'
 Plug 'ayu-theme/ayu-vim'
 
+Plug 'berdandy/ansiesc.vim'
+
 call plug#end()
 
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"

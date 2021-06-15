@@ -4,7 +4,10 @@ killall -q polybar
 
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-if type "xrandr"; then
+if [ "$(hostname)" = 'ryzen-pc' ]; then
+    MONITOR=DP-0 polybar --reload main > /tmp/polybar-main.log 2>&1 &
+    MONITOR=DP-4 polybar --reload satellite > /tmp/polybar-satellite.log 2>&1 &
+elif type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     MONITOR=$m polybar --reload main > /tmp/polybar-$m.log 2>&1 &
   done
