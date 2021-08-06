@@ -67,11 +67,13 @@ wm-restack = bspwm
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+enable-ipc = true
+
 [bar/main]
 inherit = bar/base
 
 modules-left = bspwm
-modules-center =
+modules-center = spotify spotify-prev spotify-play-pause spotify-next
 modules-right = updates volume cpu memory filesystem wlan eth battery temperature xkeyboard date
 
 tray-position = right
@@ -384,6 +386,33 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/spotify]
+type = custom/script
+tail = true
+; prefix symbol is shown before the text
+format-prefix = " "
+format = <label>
+exec = ~/.config/polybar/modules/spotify/scroll_spotify_status.sh
+
+[module/spotify-prev]
+type = custom/script
+exec = echo "玲"
+format = <label>
+click-left = playerctl previous spotify
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = echo "契"
+initial = 1
+click-left = playerctl play-pause spotify
+
+[module/spotify-next]
+type = custom/script
+exec = echo "怜"
+format = <label>
+click-left = playerctl next spotify
 
 [settings]
 screenchange-reload = true
