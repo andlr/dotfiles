@@ -30,10 +30,10 @@ alert = #bd2c40
 [bar/base]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 20
+height = 22
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
+radius = 0
 fixed-center = false
 
 background = ${colors.background}
@@ -42,11 +42,8 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
-
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 1
 module-margin-right = 2
@@ -68,6 +65,9 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 enable-ipc = true
+
+border-bottom-size = 2
+border-bottom-color = ${colors.secondary}
 
 [bar/main]
 inherit = bar/base
@@ -94,17 +94,17 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+;format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+;label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+;label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
@@ -112,7 +112,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f3} %mountpoint%%{F-}: %used%/%total%
+label-mounted = %{F#0a81f3} %mountpoint%%{F-}: %used%/%total%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -226,37 +226,27 @@ format-prefix-foreground = ${colors.secondary}
 type = internal/memory
 interval = 2
 label = %gb_used%/%gb_total%
-format-prefix = "﬙ RAM "
+format-prefix = " RAM "
 format-prefix-foreground = ${colors.secondary}
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface-type = wireless
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.secondary}
+format-connected =  <label-connected>
+;format-connected-underline = ${colors.secondary}
 label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+format-disconnected = 睊
+;format-disconnected-underline = ${colors.secondary}
 
 [module/eth]
 type = internal/network
 interface = enp3s0
 interval = 3.0
 
-format-connected-underline = ${colors.secondary}
+;format-connected-underline = ${colors.secondary}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -302,30 +292,36 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #e60053
+;format-charging-underline = ${colors.secondary} 
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+;format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-prefix = "  "
+format-full-prefix-foreground = ${colors.foreground}
+;format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 =  
+ramp-capacity-3 =  
+ramp-capacity-4 =  
+ramp-capacity-foreground = ${colors.foreground}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 =  
+animation-charging-3 =  
+animation-charging-4 =  
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+animation-discharging-foreground = ${colors.foreground}
 animation-discharging-framerate = 750
 
 [module/updates]
@@ -345,18 +341,18 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = ${colors.secondary}
+;format-underline = ${colors.secondary}
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+;format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-0 = 
+ramp-1 =  
+ramp-2 = 
+ramp-foreground = ${colors.foreground}
 
 [module/powermenu]
 type = custom/menu
