@@ -27,6 +27,9 @@ super + r
 super + Escape
 	slock
 
+Print
+    flameshot gui
+
 #
 # bspwm hotkeys
 #
