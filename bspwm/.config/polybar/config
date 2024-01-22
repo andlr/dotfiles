@@ -73,7 +73,7 @@ border-bottom-color = ${colors.secondary}
 inherit = bar/base
 
 modules-left = bspwm
-modules-center = spotify spotify-prev spotify-play-pause spotify-next
+;modules-center = spotify spotify-prev spotify-play-pause spotify-next
 modules-right = updates volume cpu memory filesystem wlan eth battery temperature xkeyboard date
 
 tray-position = right
@@ -243,7 +243,7 @@ format-disconnected = 睊
 
 [module/eth]
 type = internal/network
-interface = enp3s0
+interface-type = wired
 interval = 3.0
 
 ;format-connected-underline = ${colors.secondary}
