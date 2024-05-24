@@ -26,6 +26,7 @@ foreground-alt = #555
 primary = #e60053
 secondary = #0a6cf5
 alert = #bd2c40
+warn = #fcb103
 
 [bar/base]
 monitor = ${env:MONITOR:}
@@ -347,12 +348,14 @@ format-warn = <ramp> <label-warn>
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.warn}
 
 ramp-0 = 
 ramp-1 =  
 ramp-2 = 
 ramp-foreground = ${colors.foreground}
+
+hwmon-path = ${env:CPU_TEMP_HWMON_PATH:}
 
 [module/powermenu]
 type = custom/menu
