@@ -18,13 +18,13 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #00060e
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = #39c4b6
 foreground-alt = #555
-primary = #e60053
-secondary = #0a6cf5
+primary = #fee801
+secondary = #39c4b6
 alert = #bd2c40
 warn = #fcb103
 
@@ -113,7 +113,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f3} %mountpoint%%{F-}: %used%/%total%
+label-mounted =  %mountpoint%: %used%/%total%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 

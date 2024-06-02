@@ -14,15 +14,15 @@ if [[ $(hostname) == 'PC' ]]; then
 fi
 
 bspc config border_width         2
-bspc config window_gap          12
-bspc config top_padding 5
+bspc config window_gap          4
+bspc config top_padding 3
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc config focused_border_color "#e60053"
-bspc config normal_border_color "#0a6cf5"
+bspc config focused_border_color "#fee801"
+bspc config normal_border_color "#39c4b6"
 
 bspc rule -a zoom state=floating focus=off
 
