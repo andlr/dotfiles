@@ -105,6 +105,7 @@ label-layout = %layout%
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
+label-indicator-foreground = ${colors.background}
 ;label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
@@ -339,7 +340,7 @@ initial = 1
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 80
 
 format = <ramp> <label>
 ;format-underline = ${colors.secondary}
