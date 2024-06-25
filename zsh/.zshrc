@@ -110,5 +110,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export BAT_THEME=GitHub
+
+# Host-specific configuration
+HOST_CFG=~/.host.zsh
+test -f $HOST_CFG && source $HOST_CFG
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

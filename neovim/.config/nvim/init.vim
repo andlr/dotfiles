@@ -15,7 +15,7 @@ Plug 'bling/vim-bufferline'
 Plug 'vim-scripts/gtags.vim'
 Plug 'majutsushi/tagbar'
 Plug 'ap/vim-css-color'
-Plug 'ayu-theme/ayu-vim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 Plug 'berdandy/ansiesc.vim'
 
@@ -28,11 +28,12 @@ nmap <C-n> :NERDTreeToggle<CR>
 syntax on
 
 set termguicolors
-let ayucolor="light"
-colorscheme ayu
+
+colorscheme catppuccin-latte
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'catppuccin'
 let g:bufferline_echo = 0
 
 set number

@@ -2,12 +2,7 @@
 
 sxhkd &
 
-if [[ $(hostname) == 'al-thinkpad' ]] && xrandr | grep " connected " | grep -q HDMI-A-0; then
-    bspc monitor eDP -d 1 2 3 4 5
-    bspc monitor HDMI-A-0 -d 6 7 8 9 10
-else
-    bspc monitor -d 1 2 3 4 5 6 7 8 9 10
-fi
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 if [[ $(hostname) == 'PC' ]]; then
     xrandr --output DP-2 --scale 0.75x0.75
@@ -21,8 +16,8 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc config focused_border_color "#fee801"
-bspc config normal_border_color "#39c4b6"
+bspc config focused_border_color "#1e66f5"
+bspc config normal_border_color "#7c7f93"
 
 bspc rule -a zoom state=floating focus=off
 
@@ -46,10 +41,11 @@ fi
 
 # keyboard config
 if [ -x "$(command -v setxkbmap)" ]; then
-    setxkbmap -layout us,ru,ua -option grp:shift_caps_toggle
+    setxkbmap -layout us,ua -option grp:shift_caps_toggle
 fi
 
-# wallpaper
+# Wallpaper
+# Source: https://www.reddit.com/r/wallpaper/comments/lqmuyg/one_more_time_by_me_3840x2160/
 if [ -x "$(command -v feh)" ]; then
-    feh --bg-center ~/.config/bspwm/wallpaper.jpg
+    feh --bg-fill ~/.config/bspwm/wallpaper.png
 fi
