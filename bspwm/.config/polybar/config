@@ -265,7 +265,7 @@ time = "%H:%M "
 label = %date% %time%
 
 [module/volume]
-type = internal/alsa
+type = internal/pulseaudio
 use-ui-max = false
 
 label-volume = %percentage:2%
