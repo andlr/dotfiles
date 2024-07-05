@@ -140,3 +140,6 @@ XF86Audio{LowerVolume,RaiseVolume,Mute}
 
 XF86MonBrightness{Down,Up}
   ~/scripts/brightness.sh {down,up}
+
+super + alt + b
+  ~/scripts/bluetooth/toggle_bt.sh

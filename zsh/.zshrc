@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 export BAT_THEME=GitHub
 
 # Host-specific configuration
-HOST_CFG=~/.host.zsh
+HOST_CFG=~/.host.sh
 test -f $HOST_CFG && source $HOST_CFG
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

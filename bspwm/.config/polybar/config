@@ -73,7 +73,7 @@ inherit = bar/base
 
 modules-left = bspwm
 ;modules-center = spotify spotify-prev spotify-play-pause spotify-next
-modules-right = updates volume cpu memory filesystem wlan eth battery temperature xkeyboard date
+modules-right = updates volume bluetooth cpu memory filesystem wlan eth battery temperature xkeyboard date
 
 tray-position = right
 tray-padding = 2
@@ -234,7 +234,7 @@ type = internal/network
 interface-type = wireless
 interval = 3.0
 
-format-connected =  <label-connected>
+format-connected =   <label-connected>
 ;format-connected-underline = ${colors.secondary}
 label-connected = %essid%
 
@@ -411,6 +411,14 @@ type = custom/script
 exec = echo "怜"
 format = <label>
 click-left = playerctl next spotify
+
+[module/bluetooth]
+type = custom/script
+format-prefix = "󰂰 "
+format = <label>
+format-prefix-foreground = ${colors.secondary}
+exec-if = ~/scripts/bluetooth/is_connected.sh
+exec = ~/scripts/bluetooth/name.sh
 
 [settings]
 screenchange-reload = true
