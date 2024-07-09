@@ -139,7 +139,7 @@ XF86Audio{LowerVolume,RaiseVolume,Mute}
   amixer -D pulse sset Master {5%-,5%+,1+ toggle}
 
 XF86MonBrightness{Down,Up}
-  ~/scripts/brightness.sh {down,up}
+  ~/scripts/backlight/modify.sh {down,up}
 
 super + alt + b
   ~/scripts/bluetooth/toggle_bt.sh
