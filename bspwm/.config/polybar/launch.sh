@@ -4,8 +4,9 @@ killall -q polybar
 
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-if [ "$(hostname)" = 'thinkpad' ]; then
-    export CPU_TEMP_HWMON_PATH=/sys/devices/platform/thinkpad_hwmon/hwmon/hwmon5/temp1_input
+if [ -x $(command -v ~/.host.sh) ]
+then
+    source ~/.host.sh
 fi
 
 if [ "$(hostname)" = 'ryzen-pc' ]; then
