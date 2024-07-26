@@ -143,3 +143,7 @@ XF86MonBrightness{Down,Up}
 
 super + alt + b
   ~/scripts/bluetooth/toggle_bt.sh
+
+super + alt + n
+  ~/scripts/wifi/toggle_wifi.sh
+
