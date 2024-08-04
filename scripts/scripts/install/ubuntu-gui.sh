@@ -3,23 +3,28 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 sudo apt install -y \
-	polybar \
-	dunst \
-	kitty \
-	brightnessctl \
-	make \
-	gcc \
-	g++ \
-	libxcb-xinerama0-dev \
-	libxcb-icccm4-dev \
-	libxcb-randr0-dev \
-	libxcb-util0-dev \
-	libxcb-ewmh-dev \
-	libxcb-keysyms1-dev \
-	libxcb-shape0-dev \
-	rofi \
-	feh \
-	font-manager
+    polybar \
+    dunst \
+    kitty \
+    brightnessctl \
+    make \
+    gcc \
+    g++ \
+    libxcb-xinerama0-dev \
+    libxcb-icccm4-dev \
+    libxcb-randr0-dev \
+    libxcb-util0-dev \
+    libxcb-ewmh-dev \
+    libxcb-keysyms1-dev \
+    libxcb-shape0-dev \
+    rofi \
+    feh \
+    font-manager \
+    pulseaudio \
+    pavucontrol
+
+# Create symlinks
+stow kitty bspwm dunst
 
 pushd /tmp
 # Install bspwm
@@ -41,7 +46,4 @@ chmod +x setup.sh
 ./setup.sh
 popd
 popd
-
-# Create symlinks
-stow kitty bspwm dunst
 
