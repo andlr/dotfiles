@@ -40,6 +40,11 @@ if [ -x "$(command -v dunst)" ]; then
     dunst &
 fi
 
+# polkit-dumb-agent
+if [ -x "$(command -v polkit-dumb-agent)" ]; then
+    polkit-dumb-agent &
+fi
+
 # keyboard config
 if [ -x "$(command -v setxkbmap)" ]; then
     setxkbmap -layout us,ua -option grp:shift_caps_toggle
