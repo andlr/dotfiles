@@ -147,3 +147,5 @@ super + alt + b
 super + alt + n
   ~/scripts/wifi/toggle_wifi.sh
 
+super + alt + v
+  ~/scripts/vpn/toggle_vpn.sh

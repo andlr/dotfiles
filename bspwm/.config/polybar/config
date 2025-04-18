@@ -73,7 +73,7 @@ inherit = bar/base
 
 modules-left = bspwm
 ;modules-center = spotify spotify-prev spotify-play-pause spotify-next
-modules-right = updates volume bluetooth cpu memory filesystem wlan eth battery temperature xkeyboard date
+modules-right = vpn bluetooth updates volume cpu memory filesystem wlan eth battery temperature xkeyboard date
 
 tray-position = right
 tray-padding = 2
@@ -419,6 +419,14 @@ format = <label>
 format-prefix-foreground = ${colors.secondary}
 exec-if = ~/scripts/bluetooth/is_connected.sh
 exec = ~/scripts/bluetooth/name.sh
+
+[module/vpn]
+type = custom/script
+format-prefix = "󰒄 "
+format = <label>
+format-prefix-foreground = ${colors.secondary}
+exec-if = ~/scripts/vpn/is_connected.sh
+exec = ~/scripts/vpn/name.sh
 
 [settings]
 screenchange-reload = true
