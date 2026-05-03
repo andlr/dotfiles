@@ -1,11 +1,34 @@
-# Configuration file for dircolors, a utility to help you set the
-# LS_COLORS environment variable used by GNU ls with the --color option.
-# Copyright (C) 1996-2014 Free Software Foundation, Inc.
-# Copying and distribution of this file, with or without modification,
-# are permitted provided the copyright notice and this notice are preserved.
-# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
-# slackware version of dircolors) are recognized but ignored.
-# Below, there should be one TERM entry for each termtype that is colorizable
+# I couldn't find any light themes for dircolors, so I've given up and generated one with Claude.
+# Result looks quite decent.
+#
+# Uses Catppuccin Latte palette (approximate 256-color / truecolor ANSI):
+#   Rosewater  #dc8a78  → 216
+#   Flamingo   #dd7878  → 210
+#   Pink       #ea76cb  → 213
+#   Mauve      #8839ef  → 99
+#   Red        #d20f39  → 160
+#   Maroon     #e64553  → 167
+#   Peach      #fe640b  → 208
+#   Yellow     #df8e1d  → 178
+#   Green      #40a02b  → 34
+#   Teal       #179299  → 30
+#   Sky        #04a5e5  → 39
+#   Sapphire   #209fb5  → 31
+#   Blue       #1e66f5  → 27
+#   Lavender   #7287fd  → 105
+#   Text       #4c4f69  → 238
+#   Subtext1   #5c5f77  → 240
+#   Subtext0   #6c6f85  → 242
+#   Overlay2   #7c7f93  → 244
+#   Overlay1   #8c8fa1  → 245
+#   Overlay0   #9ca0b0  → 246
+#   Surface2   #acb0be  → 247
+#   Surface1   #bcc0cc  → 250
+#   Surface0   #ccd0da  → 252
+#   Base       #eff1f5  → 255
+#   Mantle     #e6e9ef  → 254
+#   Crust      #dce0e8  → 253
+
 TERM Eterm
 TERM ansi
 TERM color-xterm
@@ -23,17 +46,16 @@ TERM cons25
 TERM console
 TERM cygwin
 TERM dtterm
-TERM eterm-color
 TERM gnome
 TERM gnome-256color
 TERM hurd
 TERM jfbterm
 TERM konsole
+TERM konsole-256color
 TERM kterm
 TERM linux
 TERM linux-c
 TERM mach-color
-TERM mach-gnu-color
 TERM mlterm
 TERM putty
 TERM putty-256color
@@ -55,6 +77,8 @@ TERM screen.linux
 TERM st
 TERM st-256color
 TERM terminator
+TERM tmux
+TERM tmux-256color
 TERM vt100
 TERM xterm
 TERM xterm-16color
@@ -62,188 +86,475 @@ TERM xterm-256color
 TERM xterm-88color
 TERM xterm-color
 TERM xterm-debian
-TERM xterm-termite
-# Below are the color init strings for the basic file types. A color init
-# string consists of one or more of the following numeric codes:
-# Attribute codes:
-# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
-# Text color codes:
-# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
-# Background color codes:
-# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-#NORMAL 00 # no color code at all
-#FILE 00 # regular file: use no color at all
-RESET 0 # reset to "normal" color
-DIR 02;34;32 # directory
-LINK 07;36 # symbolic link. (If you set this to 'target' instead of a
- # numerical value, the color is as for the file pointed to.)
-MULTIHARDLINK 00 # regular file with more than one link
-FIFO 01;37 # pipe
-SOCK 01;35 # socket
-DOOR 01;35 # door
-BLK 01;34 # block device driver
-CHR 01;34 # character device driver
-ORPHAN 31;01 # symlink to nonexistent file, or non-stat'able file
-SETUID 05;36;04 # file that is setuid (u+s)
-SETGID 05;35;04 # file that is setgid (g+s)
-CAPABILITY 07;37 # file with capability
-STICKY_OTHER_WRITABLE 07;04 # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE 30 # dir that is other-writable (o+w) and not sticky
-STICKY 37;04 # dir with the sticky bit set (+t) and not other-writable
-# This is for files with execute permission:
-EXEC 01;34
-# List any file extensions like '.gz' or '.tar' that you would like ls
-# to colorize below. Put the extension, a space, and the color init string.
-# (and any comments you want to add after a '#')
+TERM xterm-kitty
 
-# DOS File
-.cmd 01;30 
-.exe 01;30
-.com 01;30
-.btm 01;30
-.bat 01;30
+# ==========================================
+# CORE FILE TYPES
+# ==========================================
 
-# archives or compressed
-.tar 01;31
-.tgz 01;31
-.arc 01;31
-.arj 01;31
-.taz 01;31
-.lha 01;31
-.lz4 01;31
-.lzh 01;31
-.lzma 01;31
-.tlz 01;31
-.txz 01;31
-.tzo 01;31
-.t7z 01;31
-.zip 01;31
-.z 01;31
-.Z 01;31
-.dz 01;31
-.gz 01;31
-.lrz 01;31
-.lz 01;31
-.lzo 01;31
-.xz 01;31
-.bz2 01;31
-.bz 01;31
-.tbz 01;31
-.tbz2 01;31
-.tz 01;31
-.deb 01;31
-.rpm 01;31
-.jar 01;31
-.war 01;31
-.ear 01;31
-.sar 01;31
-.rar 01;31
-.alz 01;31
-.ace 01;31
-.zoo 01;31
-.cpio 01;31
-.7z 01;31
-.rz 01;31
-.cab 01;31
-.iso 01;31
+# Normal file — Text (4c4f69 / 238)
+NORMAL 00;38;5;238
 
-# image formats
-.jpg 01;37
-.jpeg 01;37
-.gif 01;37
-.bmp 01;37
-.pbm 01;37
-.pgm 01;37
-.ppm 01;37
-.tga 01;37
-.xbm 01;37
-.xpm 01;37
-.tif 01;37
-.tiff 01;37
-.png 01;33;03
-.svg 01;37
-.svgz 01;37
-.mng 01;37
-.pcx 01;37
-.mov 01;37
-.mpg 01;37
-.mpeg 01;37
-.m2v 01;37
-.webm 01;37
-.ogm 01;37
-.m4v 01;37
-.mp4v 01;37
-.vob 01;37
-.qt 01;37
-.nuv 01;37
-.wmv 01;37
-.asf 01;37
-.rm 01;37
-.rmvb 01;37
-.flc 01;37
-.fli 01;37
-.flv 01;37
-.gl 01;37
-.dl 01;37
-.xcf 01;37
-.xwd 01;37
-.yuv 01;37
-.cgm 01;37
-.emf 01;37
+# Regular file — same as NORMAL
+FILE 00;38;5;238
 
-# movie formats
-.avi 01;39
-.mkv 01;39
-.mp4 01;39
-.mkv 01;39
+# Reset to normal
+RESET 0
 
-# audio formats
-.aac 01;34
-.au 01;34
-.flac 01;33
-.m4a 01;34
-.mid 01;34
-.midi 01;34
-.mka 01;34
-.mp3 01;34
-.mpc 01;34
-.ogg 01;34
-.ra 01;34
-.wav 01;34
+# Directory — Blue (1e66f5 / 27), bold
+DIR 01;38;5;27
 
-# torrents
-.torrent 08;30
+# Symbolic link — Sky (04a5e5 / 39)
+LINK 00;38;5;39
 
-# documents
-.pdf 01;36
-.doc 01;36
-.txt 01;36
+# Multihardlink
+MULTIHARDLINK 00;38;5;246
 
+# Pipe / FIFO — Yellow (df8e1d / 178)
+FIFO 00;38;5;178
 
-# web formats
-.php 31
-.html 32
-.ejs 32
-.yml 37
-.js 01;33
-.ts 01;37
-.xml 06
-.md 33
-.sass 01;31
-.scss 01;32
-.css 01;35
+# Socket — Mauve (8839ef / 99)
+SOCK 00;38;5;99
 
-# source code
-.c 01;31;5;240
-.h 01;36
-.py 01;31
-.sh 01;31
-.rb 01;33
-.zsh 01;38
-.ksh 01;35
+# Door (Solaris)
+DOOR 00;38;5;99
 
-# crypted file
-.gpg 00;38;5;166
-.asc 00;38;5;166
-.crt 00;38;5;166
-.pem 00;38;5;166
+# Block device — Peach (fe640b / 208), bold
+BLK 01;38;5;208
+
+# Character device — Peach (fe640b / 208)
+CHR 00;38;5;208
+
+# Orphaned symlink — Red (d20f39 / 160) on Base
+ORPHAN 00;38;5;160
+
+# Missing file pointed to by symlink
+MISSING 00;38;5;160
+
+# Setuid (u+s) — Red bg
+SETUID 00;38;5;255;48;5;160
+
+# Setgid (g+s) — Yellow bg
+SETGID 00;38;5;238;48;5;178
+
+# Sticky + other-writable — Teal bg
+STICKY_OTHER_WRITABLE 00;38;5;255;48;5;30
+
+# Other-writable (not sticky) — Sapphire bg
+OTHER_WRITABLE 00;38;5;238;48;5;31
+
+# Sticky (not other-writable) — Lavender bg
+STICKY 00;38;5;255;48;5;105
+
+# Executable — Green (40a02b / 34), bold
+EXEC 01;38;5;34
+
+# ==========================================
+# ARCHIVES & COMPRESSED FILES
+# Maroon / Flamingo tones
+# ==========================================
+.tar    00;38;5;167
+.tgz    00;38;5;167
+.arc    00;38;5;167
+.arj    00;38;5;167
+.taz    00;38;5;167
+.lha    00;38;5;167
+.lz4    00;38;5;167
+.lzh    00;38;5;167
+.lzma   00;38;5;167
+.tlz    00;38;5;167
+.txz    00;38;5;167
+.tzo    00;38;5;167
+.t7z    00;38;5;167
+.zip    00;38;5;167
+.z      00;38;5;167
+.dz     00;38;5;167
+.gz     00;38;5;167
+.lrz    00;38;5;167
+.lz     00;38;5;167
+.lzo    00;38;5;167
+.xz     00;38;5;167
+.zst    00;38;5;167
+.tzst   00;38;5;167
+.bz2    00;38;5;167
+.bz     00;38;5;167
+.tbz    00;38;5;167
+.tbz2   00;38;5;167
+.tz     00;38;5;167
+.deb    00;38;5;167
+.rpm    00;38;5;167
+.jar    00;38;5;167
+.war    00;38;5;167
+.ear    00;38;5;167
+.sar    00;38;5;167
+.rar    00;38;5;167
+.alz    00;38;5;167
+.ace    00;38;5;167
+.zoo    00;38;5;167
+.cpio   00;38;5;167
+.7z     00;38;5;167
+.rz     00;38;5;167
+.cab    00;38;5;167
+.wim    00;38;5;167
+.swm    00;38;5;167
+.dwm    00;38;5;167
+.esd    00;38;5;167
+.zstd   00;38;5;167
+
+# ==========================================
+# IMAGE FILES
+# Pink / Flamingo / Rosewater
+# ==========================================
+.jpg    00;38;5;213
+.jpeg   00;38;5;213
+.mjpg   00;38;5;213
+.mjpeg  00;38;5;213
+.gif    00;38;5;213
+.bmp    00;38;5;213
+.pbm    00;38;5;213
+.pgm    00;38;5;213
+.ppm    00;38;5;213
+.tga    00;38;5;213
+.xbm    00;38;5;213
+.xpm    00;38;5;213
+.tif    00;38;5;213
+.tiff   00;38;5;213
+.png    00;38;5;213
+.svg    00;38;5;213
+.svgz   00;38;5;213
+.mng    00;38;5;213
+.pcx    00;38;5;213
+.mov    00;38;5;210
+.mpg    00;38;5;210
+.mpeg   00;38;5;210
+.m2v    00;38;5;210
+.mkv    00;38;5;210
+.webm   00;38;5;210
+.webp   00;38;5;213
+.ogm    00;38;5;210
+.mp4    00;38;5;210
+.m4v    00;38;5;210
+.mp4v   00;38;5;210
+.vob    00;38;5;210
+.qt     00;38;5;210
+.nuv    00;38;5;210
+.wmv    00;38;5;210
+.asf    00;38;5;210
+.rm     00;38;5;210
+.rmvb   00;38;5;210
+.flc    00;38;5;210
+.avi    00;38;5;210
+.fli    00;38;5;210
+.flv    00;38;5;210
+.gl     00;38;5;210
+.dl     00;38;5;210
+.xcf    00;38;5;213
+.xwd    00;38;5;213
+.yuv    00;38;5;213
+.cgm    00;38;5;213
+.emf    00;38;5;213
+.ogv    00;38;5;210
+.ogx    00;38;5;210
+.heic   00;38;5;213
+.heif   00;38;5;213
+.avif   00;38;5;213
+.raw    00;38;5;213
+.cr2    00;38;5;213
+.nef    00;38;5;213
+
+# ==========================================
+# AUDIO FILES
+# Lavender / Mauve
+# ==========================================
+.aac    00;38;5;105
+.au     00;38;5;105
+.flac   00;38;5;105
+.m4a    00;38;5;105
+.mid    00;38;5;105
+.midi   00;38;5;105
+.mka    00;38;5;105
+.mp3    00;38;5;105
+.mpc    00;38;5;105
+.ogg    00;38;5;105
+.ra     00;38;5;105
+.wav    00;38;5;105
+.oga    00;38;5;105
+.opus   00;38;5;105
+.spx    00;38;5;105
+.xspf   00;38;5;105
+.wma    00;38;5;105
+.aiff   00;38;5;105
+.aif    00;38;5;105
+
+# ==========================================
+# DOCUMENT FILES
+# Yellow / Peach
+# ==========================================
+.pdf    00;38;5;208
+.doc    00;38;5;178
+.docx   00;38;5;178
+.odt    00;38;5;178
+.xls    00;38;5;178
+.xlsx   00;38;5;178
+.ods    00;38;5;178
+.ppt    00;38;5;178
+.pptx   00;38;5;178
+.odp    00;38;5;178
+.rtf    00;38;5;178
+.epub   00;38;5;208
+.mobi   00;38;5;208
+
+# ==========================================
+# SOURCE CODE FILES
+# Teal / Sapphire / Sky
+# ==========================================
+.c      00;38;5;30
+.cc     00;38;5;30
+.cpp    00;38;5;30
+.cxx    00;38;5;30
+.h      00;38;5;31
+.hh     00;38;5;31
+.hpp    00;38;5;31
+.hxx    00;38;5;31
+.py     00;38;5;30
+.pyx    00;38;5;30
+.pxd    00;38;5;30
+.rb     00;38;5;30
+.rs     00;38;5;30
+.go     00;38;5;30
+.java   00;38;5;30
+.kt     00;38;5;30
+.kts    00;38;5;30
+.scala  00;38;5;30
+.swift  00;38;5;30
+.js     00;38;5;39
+.mjs    00;38;5;39
+.cjs    00;38;5;39
+.ts     00;38;5;39
+.tsx    00;38;5;39
+.jsx    00;38;5;39
+.vue    00;38;5;39
+.svelte 00;38;5;39
+.php    00;38;5;30
+.lua    00;38;5;30
+.pl     00;38;5;30
+.pm     00;38;5;30
+.hs     00;38;5;30
+.lhs    00;38;5;30
+.ml     00;38;5;30
+.mli    00;38;5;30
+.ex     00;38;5;30
+.exs    00;38;5;30
+.erl    00;38;5;30
+.clj    00;38;5;30
+.cljs   00;38;5;30
+.cljc   00;38;5;30
+.r      00;38;5;30
+.R      00;38;5;30
+.jl     00;38;5;30
+.nim    00;38;5;30
+.zig    00;38;5;30
+.d      00;38;5;30
+.f90    00;38;5;30
+.f95    00;38;5;30
+.f03    00;38;5;30
+
+# ==========================================
+# SHELL SCRIPTS & SCRIPTING
+# Green
+# ==========================================
+.sh     00;38;5;34
+.bash   00;38;5;34
+.zsh    00;38;5;34
+.fish   00;38;5;34
+.ksh    00;38;5;34
+.csh    00;38;5;34
+.tcsh   00;38;5;34
+.awk    00;38;5;34
+.sed    00;38;5;34
+.ps1    00;38;5;34
+.psm1   00;38;5;34
+.psd1   00;38;5;34
+.bat    00;38;5;34
+.cmd    00;38;5;34
+
+# ==========================================
+# CONFIG & DATA FILES
+# Subtext / Overlay tones
+# ==========================================
+.cfg        00;38;5;245
+.conf       00;38;5;245
+.config     00;38;5;245
+.ini        00;38;5;245
+.toml       00;38;5;245
+.yaml       00;38;5;245
+.yml        00;38;5;245
+.json       00;38;5;245
+.json5      00;38;5;245
+.jsonc      00;38;5;245
+.xml        00;38;5;245
+.dtd        00;38;5;245
+.xsl        00;38;5;245
+.xslt       00;38;5;245
+.env        00;38;5;245
+.envrc      00;38;5;245
+.properties 00;38;5;245
+.nix        00;38;5;245
+.plist      00;38;5;245
+.reg        00;38;5;245
+.editorconfig 00;38;5;244
+.gitconfig  00;38;5;244
+.gitignore  00;38;5;244
+.gitattributes 00;38;5;244
+.dockerignore 00;38;5;244
+.npmignore  00;38;5;244
+.eslintrc   00;38;5;244
+.prettierrc 00;38;5;244
+.babelrc    00;38;5;244
+.stylelintrc 00;38;5;244
+.htaccess   00;38;5;244
+
+# ==========================================
+# MARKUP & STYLE
+# Sapphire / Lavender
+# ==========================================
+.html   00;38;5;31
+.htm    00;38;5;31
+.xhtml  00;38;5;31
+.shtml  00;38;5;31
+.css    00;38;5;105
+.less   00;38;5;105
+.sass   00;38;5;105
+.scss   00;38;5;105
+.styl   00;38;5;105
+.md     00;38;5;105
+.mdx    00;38;5;105
+.markdown 00;38;5;105
+.rst    00;38;5;105
+.tex    00;38;5;105
+.bib    00;38;5;244
+.adoc   00;38;5;105
+.org    00;38;5;105
+
+# ==========================================
+# DATABASE & DATA
+# Peach / Yellow
+# ==========================================
+.sql    00;38;5;178
+.db     00;38;5;208
+.sqlite 00;38;5;208
+.sqlite3 00;38;5;208
+.mdb    00;38;5;208
+.accdb  00;38;5;208
+.csv    00;38;5;178
+.tsv    00;38;5;178
+.psv    00;38;5;178
+
+# ==========================================
+# SYSTEM & BINARY
+# Overlay tones (muted)
+# ==========================================
+.o      00;38;5;244
+.a      00;38;5;244
+.so     00;38;5;244
+.ko     00;38;5;244
+.pyc    00;38;5;244
+.pyo    00;38;5;244
+.class  00;38;5;244
+.jar    00;38;5;167
+.out    00;38;5;244
+.bin    00;38;5;246
+.exe    00;38;5;34
+.dll    00;38;5;244
+.elf    00;38;5;34
+.la     00;38;5;244
+.lo     00;38;5;244
+.rlib   00;38;5;244
+
+# ==========================================
+# LOCK & GENERATED FILES
+# Subtext (muted, slightly dimmer)
+# ==========================================
+.lock           00;38;5;246
+*package-lock.json 00;38;5;246
+*yarn.lock      00;38;5;246
+*Gemfile.lock   00;38;5;246
+*Cargo.lock     00;38;5;246
+*composer.lock  00;38;5;246
+*Pipfile.lock   00;38;5;246
+.map            00;38;5;244
+.min.js         00;38;5;244
+.min.css        00;38;5;244
+
+# ==========================================
+# PATCH & DIFF FILES
+# Teal / Green
+# ==========================================
+.patch  00;38;5;30
+.diff   00;38;5;30
+
+# ==========================================
+# LOG FILES
+# Overlay (muted yellow-ish)
+# ==========================================
+.log    00;38;5;178
+.logs   00;38;5;178
+
+# ==========================================
+# CERTIFICATE & KEY FILES
+# Red (sensitive!)
+# ==========================================
+.pem    00;38;5;160
+.key    00;38;5;160
+.crt    00;38;5;160
+.cer    00;38;5;160
+.der    00;38;5;160
+.p12    00;38;5;160
+.pfx    00;38;5;160
+.gpg    00;38;5;160
+.sig    00;38;5;160
+.asc    00;38;5;160
+
+# ==========================================
+# FONT FILES
+# Rosewater
+# ==========================================
+.ttf    00;38;5;216
+.otf    00;38;5;216
+.woff   00;38;5;216
+.woff2  00;38;5;216
+.eot    00;38;5;216
+
+# ==========================================
+# SPECIAL NAMED FILES
+# ==========================================
+*Dockerfile         00;38;5;39
+*docker-compose.yml 00;38;5;39
+*docker-compose.yaml 00;38;5;39
+*Makefile           01;38;5;178
+*GNUmakefile        01;38;5;178
+*Rakefile           00;38;5;178
+*Justfile           00;38;5;178
+*CMakeLists.txt     00;38;5;178
+*meson.build        00;38;5;178
+*BUILD              00;38;5;178
+*WORKSPACE          00;38;5;178
+*README             01;38;5;105
+*README.md          01;38;5;105
+*README.rst         01;38;5;105
+*LICENSE            00;38;5;246
+*LICENCE            00;38;5;246
+*COPYING            00;38;5;246
+*CHANGELOG          00;38;5;246
+*CHANGELOG.md       00;38;5;246
+*CHANGES            00;38;5;246
+*CONTRIBUTING       00;38;5;246
+*CONTRIBUTING.md    00;38;5;246
+*.gitignore         00;38;5;244
+*.gitmodules        00;38;5;244
+*Cargo.toml         00;38;5;245
+*pyproject.toml     00;38;5;245
+*package.json       00;38;5;245
+*go.mod             00;38;5;245
+*go.sum             00;38;5;246
+*flake.nix          00;38;5;245
