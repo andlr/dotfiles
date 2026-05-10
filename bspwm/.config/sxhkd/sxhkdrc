@@ -29,6 +29,11 @@ super + Escape
 Print
     flameshot gui
 
+# For some reason, flameshot can no longer copy image to the clipboard when using 'flameshot gui'.
+# So this is the only working workaround I've found.
+shift + Print
+    flameshot gui --raw | xclip -selection clipboard -t image/png
+
 #
 # bspwm hotkeys
 #
