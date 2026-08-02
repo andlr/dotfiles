@@ -5,6 +5,10 @@
   flake.nixosModules.core =
     { pkgs, ... }:
     {
+      imports = [
+        inputs.noctalia-greeter.nixosModules.default
+      ];
+
       services.resolved.enable = true;
 
       networking.networkmanager = {
@@ -40,7 +44,21 @@
 
       programs.firefox.enable = true;
 
-      programs.regreet.enable = true;
+      programs.noctalia-greeter = {
+        enable = true;
+
+        greeter-args = "";
+        settings = {
+          cursor = {
+            theme = "Bibata-Modern-Ice";
+            size = 24;
+            path = "${pkgs.bibata-cursors}/share/icons";
+          };
+          keyboard = {
+            layout = "us";
+          };
+        };
+      };
 
       environment.systemPackages = with pkgs; [
         vim

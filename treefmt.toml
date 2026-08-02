@@ -23,5 +23,5 @@ includes = ["*.nix"]
 [formatter.shfmt]
 command = "shfmt"
 options = ["-w"]
-includes = ["*.sh", "*.zsh"]
+includes = ["*.sh"]
 
