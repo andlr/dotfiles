@@ -73,6 +73,7 @@
         vscode
         slack
         dnsutils
+        ghostty
       ];
 
       nix.settings.experimental-features = [

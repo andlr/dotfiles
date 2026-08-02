@@ -34,7 +34,7 @@
 
           binds = {
             "Mod+Shift+Slash".show-hotkey-overlay = _: { };
-            "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
+            "Mod+Return".spawn-sh = lib.getExe pkgs.ghostty;
             "Mod+X".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
 
             "XF86AudioRaiseVolume" = _: {
