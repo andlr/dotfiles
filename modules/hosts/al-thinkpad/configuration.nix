@@ -17,8 +17,19 @@
       boot.loader.efi.canTouchEfiVariables = true;
       boot.kernelPackages = pkgs.linuxPackages_latest;
 
+      services.resolved.enable = true;
+
       networking.hostName = "al-thinkpad";
-      networking.networkmanager.enable = true;
+      networking.networkmanager = {
+        enable = true;
+        plugins = with pkgs; [
+          networkmanager-openvpn
+        ];
+        dns = "systemd-resolved";
+      };
+
+      programs.nm-applet.enable = true;
+      services.gnome.gnome-keyring.enable = true;
 
       time.timeZone = "Europe/Kyiv";
 
@@ -59,6 +70,9 @@
         tmux
         curl
         devenv
+        vscode
+        slack
+        dnsutils
       ];
 
       nix.settings.experimental-features = [
