@@ -2,8 +2,9 @@
 
 set -e
 
-if [ -x $(command -v ~/.host.sh) ]
+if [ -x "$(command -v ~/.host.sh)" ]
 then
+    # shellcheck disable=SC1090
     source  ~/.host.sh
 fi
 
@@ -18,8 +19,8 @@ else
     value="10%-"
 fi
 
-brightnessctl -d $BACKLIGHT_DEV set $value
-updated_value=$(brightnessctl -d $BACKLIGHT_DEV | grep Current | awk -F '[()]' '{print $2}')
+brightnessctl -d "$BACKLIGHT_DEV" set $value
+updated_value=$(brightnessctl -d "$BACKLIGHT_DEV" | grep Current | awk -F '[()]' '{print $2}')
 
 notify-send "Brightness: $updated_value"
 

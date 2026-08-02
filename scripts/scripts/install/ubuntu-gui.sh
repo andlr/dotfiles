@@ -1,7 +1,5 @@
 #!/bin/bash
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-
 sudo apt install -y \
     polybar \
     dunst \
@@ -26,24 +24,29 @@ sudo apt install -y \
 # Create symlinks
 stow kitty bspwm dunst
 
-pushd /tmp
+pushd /tmp || exit
+
 # Install bspwm
 git clone https://github.com/baskerville/bspwm.git
-pushd bspwm
+
+pushd bspwm || exit
 make
 sudo make install
-popd
+popd || exit # ./bspwm
+
 # Install sxhkd
 git clone https://github.com/baskerville/sxhkd.git
-pushd sxhkd
+pushd sxhkd || exit
 make
 sudo make install
-popd
+popd || exit # ./sxhkd
+
 # Install rofi themes
 git clone --depth=1 https://github.com/adi1090x/rofi.git
-pushd rofi
+pushd rofi || exit
 chmod +x setup.sh
 ./setup.sh
-popd
-popd
+popd || exit # ./rofi
+
+popd || exit # /tmp
 

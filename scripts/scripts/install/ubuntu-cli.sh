@@ -11,7 +11,7 @@ sudo apt install -y \
 	git \
 	zsh
 
-${SCRIPT_DIR}/shell-plugins.sh
+"${SCRIPT_DIR}"/shell-plugins.sh
 
 user="${SUDO_USER:-$USER}"
 sudo usermod -s /bin/zsh "$user"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if !command -v bluetoothctl &> /dev/null
+if ! command -v bluetoothctl &> /dev/null
 then
     exit 1
 fi
