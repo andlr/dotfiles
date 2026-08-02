@@ -13,8 +13,4 @@
     pkgs.shellcheck
     pkgs.shfmt
   ];
-
-  git-hooks.hooks = {
-    treefmt.enable = true;
-  };
 }
