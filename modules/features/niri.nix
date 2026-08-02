@@ -7,52 +7,59 @@
     };
   };
 
-  perSystem = { pkgs, lib, self', ... }: {
+  perSystem =
+    {
+      pkgs,
+      lib,
+      self',
+      ...
+    }:
+    {
 
-    packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
-      inherit pkgs;
-      settings = {
-        spawn-at-startup = [
-          (lib.getExe self'.packages.myNoctalia)
-        ];
+      packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
+        inherit pkgs;
+        settings = {
+          spawn-at-startup = [
+            (lib.getExe self'.packages.myNoctalia)
+          ];
 
-	xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+          xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
-        input.keyboard = {
-          xkb.layout = "us,ua";
-          xkb.options = "grp:shift_caps_toggle";
-        };
-
-        layout.gaps = 5;
-
-        binds = {
-	  "Mod+Shift+Slash".show-hotkey-overlay = _: { };
-          "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
-          "Mod+X".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
-        };
-
-        outputs = {
-          "eDP-1" = {
-            position = _: {
-              props = {
-                x = 0;
-                y = 0;
-              };
-            };
+          input.keyboard = {
+            xkb.layout = "us,ua";
+            xkb.options = "grp:shift_caps_toggle";
           };
-          "HDMI-A-1" = {      
-            position = _: {
-              props = {
-                x = 1920;
-                y = 0;
+
+          layout.gaps = 5;
+
+          binds = {
+            "Mod+Shift+Slash".show-hotkey-overlay = _: { };
+            "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
+            "Mod+X".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+          };
+
+          outputs = {
+            "eDP-1" = {
+              position = _: {
+                props = {
+                  x = 0;
+                  y = 0;
+                };
               };
             };
-            mode = "3840x2160";
+            "HDMI-A-1" = {
+              position = _: {
+                props = {
+                  x = 1920;
+                  y = 0;
+                };
+              };
+              mode = "3840x2160";
+            };
           };
         };
       };
-    };
 
-  };
+    };
 
 }

@@ -1,0 +1,22 @@
+# The formatter multiplexer - https://github.com/numtide/treefmt
+
+# Do not exit with error if a configured formatter is missing
+# Env $TREEFMT_ALLOW_MISSING_FORMATTER
+# allow-missing-formatter = true
+
+# The file into which a cpu profile will be written
+# Env $TREEFMT_CPU_PROFILE
+# cpu-profile = ./cpu.pprof
+
+# Exclude files or directories matching the specified globs
+# Env $TREEFMT_EXCLUDES
+# excludes = ["*.md", "*.gif"]
+
+# Exit with error if any changes were made during execution
+# Useful for CI
+# Env $TREEFMT_FAIL_ON_CHANGE
+# fail-on-change = true
+[formatter.nixfmt]
+command = "nixfmt"
+includes = ["*.nix"]
+

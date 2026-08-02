@@ -1,15 +1,13 @@
 {
-    description = "NixOS Config";
-    inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-        
-        flake-parts.url = "github:hercules-ci/flake-parts";
-        import-tree.url = "github:vic/import-tree";
+  description = "NixOS Config";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-        wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
-    };
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
 
-    outputs = inputs: inputs.flake-parts.lib.mkFlake
-        {inherit inputs;}
-        (inputs.import-tree ./modules);
+    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+  };
+
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }
