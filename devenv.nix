@@ -11,10 +11,10 @@
     pkgs.nixfmt
     pkgs.treefmt
     pkgs.shellcheck
+    pkgs.shfmt
   ];
 
   git-hooks.hooks = {
-    shellcheck.enable = true;
     treefmt.enable = true;
   };
 }

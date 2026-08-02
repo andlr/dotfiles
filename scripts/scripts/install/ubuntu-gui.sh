@@ -1,25 +1,25 @@
 #!/bin/bash
 
 sudo apt install -y \
-    polybar \
-    dunst \
-    kitty \
-    brightnessctl \
-    make \
-    gcc \
-    g++ \
-    libxcb-xinerama0-dev \
-    libxcb-icccm4-dev \
-    libxcb-randr0-dev \
-    libxcb-util0-dev \
-    libxcb-ewmh-dev \
-    libxcb-keysyms1-dev \
-    libxcb-shape0-dev \
-    rofi \
-    feh \
-    font-manager \
-    pulseaudio \
-    pavucontrol
+	polybar \
+	dunst \
+	kitty \
+	brightnessctl \
+	make \
+	gcc \
+	g++ \
+	libxcb-xinerama0-dev \
+	libxcb-icccm4-dev \
+	libxcb-randr0-dev \
+	libxcb-util0-dev \
+	libxcb-ewmh-dev \
+	libxcb-keysyms1-dev \
+	libxcb-shape0-dev \
+	rofi \
+	feh \
+	font-manager \
+	pulseaudio \
+	pavucontrol
 
 # Create symlinks
 stow kitty bspwm dunst
@@ -49,4 +49,3 @@ chmod +x setup.sh
 popd || exit # ./rofi
 
 popd || exit # /tmp
-
