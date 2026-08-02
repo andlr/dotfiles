@@ -30,6 +30,26 @@
           "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
           "Mod+X".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
         };
+
+        outputs = {
+          "eDP-1" = {
+            position = _: {
+              props = {
+                x = 0;
+                y = 0;
+              };
+            };
+          };
+          "HDMI-A-1" = {      
+            position = _: {
+              props = {
+                x = 1920;
+                y = 0;
+              };
+            };
+            mode = "3840x2160";
+          };
+        };
       };
     };
 
