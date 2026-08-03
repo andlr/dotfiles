@@ -196,6 +196,10 @@
 
             "Mod+W".toggle-column-tabbed-display = _: { };
 
+            "Print".screenshot = _: { };
+            "Ctrl+Print".screenshot-screen = _: { };
+            "Alt+Print".screenshot-window = _: { };
+
             "Mod+Escape" = _: {
               props.allow-inhibiting = false;
               content.toggle-keyboard-shortcuts-inhibit = _: { };
