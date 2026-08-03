@@ -39,15 +39,6 @@
             "useDistroLogo": false
           },
           {
-            "clockColor": "none",
-            "customFont": "",
-            "formatHorizontal": "HH:mm ddd, MMM dd",
-            "formatVertical": "HH mm - dd MM",
-            "id": "Clock",
-            "tooltipFormat": "HH:mm ddd, MMM dd",
-            "useCustomFont": false
-          },
-          {
             "compactMode": true,
             "diskPath": "/",
             "iconColor": "none",
@@ -125,7 +116,7 @@
             "blacklist": [],
             "chevronColor": "none",
             "colorizeIcons": false,
-            "drawerEnabled": true,
+            "drawerEnabled": false,
             "hidePassive": false,
             "id": "Tray",
             "pinned": []
@@ -148,7 +139,7 @@
             "showPowerProfiles": false
           },
           {
-            "displayMode": "onhover",
+            "displayMode": "alwaysShow",
             "iconColor": "none",
             "id": "Volume",
             "middleClickCommand": "pwvucontrol || pavucontrol",
@@ -160,6 +151,40 @@
             "iconColor": "none",
             "id": "Brightness",
             "textColor": "none"
+          },
+          {
+            "displayMode": "alwaysShow",
+            "iconColor": "none",
+            "id": "Bluetooth",
+            "textColor": "none"
+          },
+          {
+            "displayMode": "alwaysShow",
+            "iconColor": "none",
+            "id": "VPN",
+            "textColor": "none"
+          },
+          {
+            "displayMode": "alwaysShow",
+            "iconColor": "none",
+            "id": "Network",
+            "textColor": "none"
+          },
+          {
+            "displayMode": "forceOpen",
+            "iconColor": "none",
+            "id": "KeyboardLayout",
+            "showIcon": true,
+            "textColor": "none"
+          },
+          {
+            "clockColor": "none",
+            "customFont": "",
+            "formatHorizontal": "HH:mm ddd, MMM dd",
+            "formatVertical": "HH mm - dd MM",
+            "id": "Clock",
+            "tooltipFormat": "HH:mm ddd, MMM dd",
+            "useCustomFont": false
           },
           {
             "colorizeDistroLogo": false,
@@ -353,7 +378,7 @@
       "position": "center",
       "pinnedApps": [],
       "sortByMostUsed": true,
-      "terminalCommand": "alacritty -e",
+      "terminalCommand": "ghostty",
       "customLaunchPrefixEnabled": false,
       "customLaunchPrefix": "",
       "viewMode": "list",
@@ -494,7 +519,7 @@
       "bluetoothDetailsViewMode": "grid",
       "bluetoothHideUnnamedDevices": false,
       "disableDiscoverability": false,
-      "bluetoothAutoConnect": true
+      "bluetoothAutoConnect": false
     },
     "sessionMenu": {
       "enableCountdown": true,
@@ -672,10 +697,26 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
+      "HDMI-A-1": "/nix/store/lnn22vfnix3f4pv9ryl1acz788ys87jb-noctalia-shell-4.7.7/share/noctalia-shell/Assets/Wallpaper/noctalia.png",
       "eDP-1": "/nix/store/lnn22vfnix3f4pv9ryl1acz788ys87jb-noctalia-shell-4.7.7/share/noctalia-shell/Assets/Wallpaper/noctalia.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
+      "HDMI-A-1": {
+        "name": "HDMI-A-1",
+        "connected": true,
+        "scale": 1.5,
+        "width": 2560,
+        "height": 1440,
+        "x": 1920,
+        "y": 0,
+        "physical_width": 600,
+        "physical_height": 340,
+        "refresh_rate": 60000,
+        "vrr_supported": false,
+        "vrr_enabled": false,
+        "transform": "Normal"
+      },
       "eDP-1": {
         "name": "eDP-1",
         "connected": true,
@@ -693,7 +734,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1785611765000
+      "lastSeenTs": 1785751033000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
