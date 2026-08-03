@@ -39,12 +39,12 @@
 
             "XF86AudioRaiseVolume" = _: {
               props.allow-when-locked = true;
-              content.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0";
+              content.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0";
             };
 
             "XF86AudioLowerVolume" = _: {
               props.allow-when-locked = true;
-              content.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
+              content.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
             };
 
             "XF86AudioMute" = _: {
