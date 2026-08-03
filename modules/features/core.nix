@@ -36,10 +36,6 @@
           "networkmanager"
           "wheel"
         ];
-
-        packages = with pkgs; [
-          tree
-        ];
       };
 
       programs.firefox.enable = true;
@@ -74,6 +70,8 @@
         slack
         dnsutils
         ghostty
+        tree
+        zoom-us
       ];
 
       nix.settings.experimental-features = [
