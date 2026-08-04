@@ -72,6 +72,7 @@
         ghostty
         tree
         zoom-us
+        adwaita-icon-theme
       ];
 
       nix.settings.experimental-features = [
