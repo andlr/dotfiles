@@ -32,6 +32,30 @@
 
           layout.gaps = 5;
 
+          window-rules = [
+            {
+              matches = [
+                {
+                  app-id = "(?i)zoom";
+                }
+              ];
+
+              open-floating = true;
+            }
+
+            {
+              matches = [
+                {
+                  app-id = "(?i)zoom";
+                  title = "(?i).*edit.*";
+                }
+              ];
+
+              open-floating = true;
+              open-focused = false;
+            }
+          ];
+
           binds = {
             "Mod+Shift+Slash".show-hotkey-overlay = _: { };
             "Mod+Return".spawn-sh = lib.getExe pkgs.ghostty;
