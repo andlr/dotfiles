@@ -77,6 +77,7 @@
         tree
         zoom-us
         adwaita-icon-theme
+        python3
       ];
 
       nix.settings.experimental-features = [
