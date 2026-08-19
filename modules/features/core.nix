@@ -78,6 +78,8 @@
         zoom-us
         adwaita-icon-theme
         python3
+        remmina
+        freerdp
       ];
 
       nix.settings.experimental-features = [
