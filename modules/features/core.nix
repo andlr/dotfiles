@@ -35,6 +35,7 @@
         extraGroups = [
           "networkmanager"
           "wheel"
+          "syncthing"
         ];
       };
 
@@ -80,7 +81,22 @@
         python3
         remmina
         freerdp
+        bat
+        jq
+        keepassxc
       ];
+
+      services.syncthing = {
+        enable = true;
+        openDefaultPorts = true;
+      };
+
+      services.caddy = {
+        enable = true;
+        virtualHosts."syncthing.localhost".extraConfig = ''
+          reverse_proxy http://localhost:8384
+        '';
+      };
 
       nix.settings.experimental-features = [
         "nix-command"
