@@ -86,6 +86,8 @@
         keepassxc
       ];
 
+      services.upower.enable = true;
+
       services.syncthing = {
         enable = true;
         openDefaultPorts = true;
